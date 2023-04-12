@@ -23,4 +23,47 @@ const app = Vue.createApp({
             autoplay: null
         }
     },
+    methods: {
+        changeImage(target) {
+            if(target === 'next'){
+                // Incremento l'indice
+                this.currentIndex++;
+                // Controllo per ripartire dall'inizio
+                if(this.currentIndex === source.length){
+                this.currentIndex = 0;
+                }
+            } else if (target === 'prev') {
+                // Decremento l'indice
+                this.currentIndex--;
+                // Controllo per ripartire dalla fine
+                if(this.currentIndex < 0){
+                    this.currentIndex = source.length - 1;
+                }
+            } else {
+                // Metto il current index sul thumb corrente
+                this.currentIndex = target;
+            }
+        },
+
+        startAutoplay(){
+            this.autoplay = setInterval(()=>{
+                // Incremento l'indice
+                this.currentIndex++;
+                // Controllo per ripartire dall'inizio
+                if(this.currentIndex === source.length){
+                this.currentIndex = 0;
+                }
+            }, 3000);
+        },
+
+        stopAutoplay(){
+            clearInterval(this.autoplay);
+        }
+    },
+    
+    mounted(){
+        this.startAutoplay();
+    }
 });
+
+app.mount('#root');

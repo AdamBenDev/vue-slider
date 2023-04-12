@@ -21,5 +21,29 @@
 </head>
 
 <body>
-    
+    <div class="container" id="root">
+        <div id="carousel">
+            <div class="gallery">
+                <figure v-for= "(picture, i) in pictures" v-show="i === currentIndex" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
+                    <img :src="picture.image" :alt="picture.title">
+                    <figcaption>
+                      <h2>{{ picture.title}}</h2>
+                      <h4>{{ picture.text }}</h4>
+                    </figcaption>
+                </figure>
+            </div>
+            <div id="thumbnails">
+                <img v-for= "(picture, i) in pictures" :src="picture.image" :alt="picture.title" :class="{'active': i === currentIndex}" @click="changeImage(i)">
+            </div>
+
+            <!-- Arrows -->
+            <div class="space-arrow"><i id="prev" class="fa-sharp fa-solid fa-arrow-up fa-2x" @click="changeImage('prev')"></i></div>
+            <div class="space-arrow"><i id="next" class="fa-sharp fa-solid fa-arrow-down fa-2x" @click="changeImage('next')"></i></div>
+        </div>
+        <!-- Autoplay -->
+        <!-- <div class="autoplay">
+            <button id="autoplay-button">STOP AUTOPLAY</button>
+            <button id="reverse-autoplay"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+        </div> -->
+    </div>
 </body>

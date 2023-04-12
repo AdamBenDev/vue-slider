@@ -1,0 +1,29 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Generics */
+  body {
+    font-family: sans-serif;
+    background-color: lightsteelblue;
+  }
+  
+  /* Utils */
+  .container {
+    max-width: 1100px;
+    margin: 100px auto;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  /* Carousel */
+  #carousel {
+    height: 400px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    position: relative;
+  }

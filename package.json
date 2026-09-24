@@ -1,0 +1,31 @@
+{
+  "name": "video-storici-9x16",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Video storici divulgativi verticali (9:16) in animazione illustrata 2D, per Instagram e TikTok.",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "fonts": "node scripts/copy-fonts.mjs",
+    "stills": "node scripts/render-stills.mjs",
+    "check": "node scripts/check-output.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fontsource/eb-garamond": "5.3.0",
+    "@fontsource/montserrat": "5.3.0",
+    "@remotion/bundler": "4.0.528",
+    "@remotion/cli": "4.0.528",
+    "@remotion/fonts": "4.0.528",
+    "@remotion/renderer": "4.0.528",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.528"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.2",
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}
